@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="console" class="org.apache.log4j.ConsoleAppender">
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] (%c:%L) - %m%n" />
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMax" value="FATAL" />
+      <param name="LevelMin" value="DEBUG" />
+    </filter>
+  </appender>
+
+  <appender name="fileAppender" class="org.apache.log4j.FileAppender">
+    <param name="file" value="logs/oxygen.log" />
+    <param name="append" value="false" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] (%c:%L) - %m%n" />
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMax" value="FATAL" />
+      <param name="LevelMin" value="DEBUG" />
+    </filter>
+  </appender>
+
+  <appender name="taskAppender" class="org.apache.log4j.FileAppender">
+    <param name="file" value="logs/oxygen-task.log" />
+    <param name="append" value="false" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] (%c:%L) - %m%n" />
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMax" value="FATAL" />
+      <param name="LevelMin" value="INFO" />
+    </filter>
+  </appender>
+
+  <appender name="traceAppender" class="org.apache.log4j.FileAppender">
+    <param name="file" value="logs/oxygen-trace.log" />
+    <param name="append" value="false" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] (%c:%L) - %m%n" />
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMax" value="FATAL" />
+      <param name="LevelMin" value="TRACE" />
+    </filter>
+  </appender>
+
+  <appender name="rollingAppender" class="org.apache.log4j.RollingFileAppender">
+    <param name="File" value="logs/oxygen-rolling.log" />
+    <param name="Append" value="true" />
+    <param name="MaxFileSize" value="1000KB" />
+    <param name="MaxBackupIndex" value="2" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] (%c:%L) - %m%n" />
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMax" value="FATAL" />
+      <param name="LevelMin" value="TRACE" />
+    </filter>
+  </appender>
+
+  <appender name="dailyAppender" class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="File" value="logs/oxygen-daily.log" />
+    <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern"
+        value="[%d{yyyy-MM-dd HH:mm:ss\} %-5p] [%t] (%c:%L) - %m%n" />
+    </layout>
+    <filter class="org.apache.log4j.varia.LevelRangeFilter">
+      <param name="LevelMax" value="FATAL" />
+      <param name="LevelMin" value="DEBUG" />
+    </filter>
+  </appender>
+
+  <logger name="com.cpcus.oxygen" additivity="false">
+    <level value="trace" />
+    <appender-ref ref="console" />
+    <appender-ref ref="fileAppender" />
+    <appender-ref ref="taskAppender" />
+    <appender-ref ref="traceAppender" />
+    <appender-ref ref="rollingAppender" />
+    <appender-ref ref="dailyAppender" />
+  </logger>
+
+  <logger name="com.oxygen.core" additivity="false">
+    <level value="trace" />
+    <appender-ref ref="console" />
+    <appender-ref ref="fileAppender" />
+    <appender-ref ref="taskAppender" />
+    <appender-ref ref="traceAppender" />
+    <appender-ref ref="rollingAppender" />
+    <appender-ref ref="dailyAppender" />
+  </logger>
+
+  <logger name="com.rsqa.testdev" additivity="false">
+    <level value="trace" />
+    <appender-ref ref="console" /><!-- 
+    <appender-ref ref="fileAppender" />
+    <appender-ref ref="taskAppender" />
+    <appender-ref ref="traceAppender" />
+    <appender-ref ref="rollingAppender" />
+    <appender-ref ref="dailyAppender" /> -->
+  </logger>
+  
+  <root>
+    <level value="error" />
+    <appender-ref ref="console" />
+    <appender-ref ref="fileAppender" />
+    <appender-ref ref="taskAppender" />
+    <appender-ref ref="traceAppender" />
+    <appender-ref ref="rollingAppender" />
+    <appender-ref ref="dailyAppender" />
+  </root>
+
+</log4j:configuration>
