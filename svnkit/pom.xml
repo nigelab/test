@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <!-- <parent> <groupId>com.nigel.test</groupId> <artifactId>test</artifactId> 
+    <version>0.0.1-SNAPSHOT</version> </parent> -->
+  <groupId>com.nigel.test</groupId>
+  <artifactId>svnkit</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>svnkit test</name>
+  <description>test svnkit with java</description>
+
+  <properties>
+    <nexus.url>http://10.161.92.105:8081/nexus</nexus.url>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>de.regnis.q.sequence</groupId>
+      <artifactId>sequence-library</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.tmatesoft.sqljet</groupId>
+      <artifactId>sqljet</artifactId>
+      <version>1.1.10</version>
+    </dependency>
+    <dependency>
+      <groupId>org.tmatesoft.svnkit</groupId>
+      <artifactId>svnkit</artifactId>
+      <version>1.8.10</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <!-- <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+      <id>nexus-testdev-public</id>
+      <name>RS testdev repo</name>
+      <url>${nexus.url}/content/groups/public</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+      <id>nexus-testdev-public</id>
+      <name>RS testdev repo</name>
+      <url>${nexus.url}/content/groups/public</url>
+    </pluginRepository>
+  </pluginRepositories> -->
+</project>

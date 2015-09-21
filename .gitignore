@@ -5,3 +5,4 @@ mtest/.classpath
 *.log
 RallyTest/bin/log4j.xml
 simple-service/.classpath
+*.war
