@@ -1,3 +1,7 @@
 *.project
 mtest/.classpath
 *.prefs
+*.class
+*.log
+RallyTest/bin/log4j.xml
+simple-service/.classpath
