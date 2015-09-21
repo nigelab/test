@@ -6,3 +6,4 @@ mtest/.classpath
 RallyTest/bin/log4j.xml
 simple-service/.classpath
 *.war
+svnkit/.classpath
