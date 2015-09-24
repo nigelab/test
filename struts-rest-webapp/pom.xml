@@ -14,17 +14,17 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
+    <!-- <dependency>
       <groupId>org.apache.struts</groupId>
       <artifactId>struts2-core</artifactId>
       <version>${struts2.version}</version>
-    </dependency>
+    </dependency> -->
     <dependency>
       <groupId>org.apache.struts</groupId>
       <artifactId>struts2-convention-plugin</artifactId>
       <version>${struts2.version}</version>
     </dependency>
-    <dependency>
+    <!-- <dependency>
       <groupId>org.apache.struts</groupId>
       <artifactId>struts2-json-plugin</artifactId>
       <version>${struts2.version}</version>
@@ -38,7 +38,7 @@
       <groupId>org.apache.struts.xwork</groupId>
       <artifactId>xwork-core</artifactId>
       <version>${struts2.version}</version>
-    </dependency>
+    </dependency> -->
 
     <dependency>
       <groupId>org.apache.struts</groupId>
