@@ -2,6 +2,7 @@ package com.nigel.invoke;
 
 import java.rmi.RemoteException;
 
+import javax.xml.namespace.QName;
 import javax.xml.rpc.ServiceException;
 
 import org.apache.axis.client.Call;
@@ -31,7 +32,7 @@ public class E2SoapRemoteTest
       call = (Call) service.createCall();
       call.setTargetEndpointAddress(endpoint);
       // 调用的方法名
-      call.setOperationName("GetApplicationList");
+      // call.setOperationName("GetThisControllerVersion");
 
       // 设置参数名
       // call.addParameter("name", // 参数名
@@ -40,7 +41,13 @@ public class E2SoapRemoteTest
 
       // 设置返回值类型
       call.setReturnType(XMLType.XSD_STRING); // 返回值类型：String
-      result = (String) call.invoke(new Object[] { /* name */ });// 远程调用
+      // result = (String) call.invoke(new Object[] { /* name */ });// 远程调用
+      // QName gete2info = new
+      // QName("http://tempuri.org/e2.xsd/E2SoapInterface.wsdl","GetThisControllerVersion");
+      // String localPart = "GetThisControllerVersion";
+      String localPart = "GetThisControllerName";
+      QName qname = new QName("http://tempuri.org/e2.xsd", localPart);
+      result = (String) call.invoke(qname, new Object[] { /* name */ });// 远程调用
     }
     catch (ServiceException e)
     {
