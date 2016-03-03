@@ -1,0 +1,9 @@
+# ---- Eclipse
+.classpath
+.project
+.settings
+
+# ---- builds
+*/bin/
+*/target/
+*/logs/
