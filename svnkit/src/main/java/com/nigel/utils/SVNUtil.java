@@ -110,8 +110,8 @@ public class SVNUtil
 
   public static void main(String[] args) throws SVNException, IOException
   {
-    String user = "nigel.zheng";// "jenkins";
-    String pass = "ni9el@07";// "Welcome1";
+    String user = "rstestdev";// "jenkins";
+    String pass = "Welcome1";// "Welcome1";
     SVNUtil svn = new SVNUtil("https://10.161.92.105/svn/oxygen/branches/SiteSupervisor1_04/Func/src/main/res", user, pass);
     System.out.println("login: " + svn.login());
     svn.co();
