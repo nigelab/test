@@ -57,7 +57,7 @@
     <finalName>struts-rest-webapp</finalName>
   </build>
   <properties>
-    <struts2.version>2.3.24</struts2.version>
+    <struts2.version>2.5.16</struts2.version>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
